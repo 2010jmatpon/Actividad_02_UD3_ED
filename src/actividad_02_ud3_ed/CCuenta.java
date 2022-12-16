@@ -7,27 +7,30 @@ package actividad_02_ud3_ed;
 
 /**
  * 
- * @author Ana
+ * @author Juan María Mateos Ponce
  */
 public class CCuenta {
 
-
-     
-  protected String nombre;
+    /**
+     * @hidden nombre Es el nombre de la cuenta
+     */
+    protected String nombre;
     private String cuenta;
     private double saldo;
     private double tipoInterés;
 
-  
+    /**
+     * @param CCuenta es el constructor por defecto
+     */
     public CCuenta ()
     {
     }
    /**
     * 
     * @param nom Nombre del titular de la cuenta
-    * @param cue
-    * @param sal
-    * @param tipo 
+    * @param cue Es la cuenta
+    * @param sal Es el saldo de la cuenta
+    * @param tipo Es el tipo de interés de la cuenta
     */
     public CCuenta (String nom, String cue, double sal, double tipo)
     {
@@ -38,25 +41,36 @@ public class CCuenta {
     }
   /**
    * 
-   * @param nom 
+   * @param nom Asigna un nombre a la cuenta
    */
     public void asignarNombre(String nom)
     {
         nombre=nom;
     }
    
+    /**
+     *
+     * @return Devuelve el nombre de la cuenta
+     */
     public String obtenerNombre()
     {
         return nombre;
     }
 
-    
-     public double estado ()
+    /**
+     *
+     * @return devuelve el saldo de la cuenta
+     */
+    public double estado ()
     {
         return saldo;
     }
 
-    
+    /**
+     *
+     * @param cantidad Es la cantidad que se desea ingresar en la cuenta
+     * @throws Exception Si la cantidad a ingresar es negativa devuelve un mensaje
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0){
@@ -64,7 +78,11 @@ public class CCuenta {
         setSaldo(saldo + cantidad);
     }
 
-   
+    /**
+     *
+     * @param cantidad Es la cantidad que se desea retirar de la cuenta
+     * @throws Exception Exception Si la cantidad a ingresar es negativa o no hay saldo en la cuenta devuelve un mensaje
+     */
     public void retirar (double cantidad) throws Exception
     {
         if (cantidad < 0){
@@ -74,28 +92,44 @@ public class CCuenta {
         setSaldo(saldo - cantidad);
     }
     
+    /**
+     *
+     * @return Devuelve la cuenta
+     */
     public String obtenerCuenta ()
     {
         return cuenta;
     }
 
-  
-  public void setCuenta(String cuenta) {
+    /**
+     *
+     * @param cuenta Es la cuenta
+     */
+    public void setCuenta(String cuenta) {
     this.cuenta = cuenta;
   }
 
-  
-  public void setSaldo(double saldo) {
+    /**
+     *
+     * @param saldo es el saldo de la cuenta
+     */
+    public void setSaldo(double saldo) {
     this.saldo = saldo;
   }
 
- 
-  public double getTipoInterés() {
+    /**
+     *
+     * @return nos devuelve el tipo de interés
+     */
+    public double getTipoInterés() {
     return tipoInterés;
   }
 
-  
-  public void setTipoInterés(double tipoInterés) {
+    /**
+     *
+     * @param tipoInterés es el tipo de interés
+     */
+    public void setTipoInterés(double tipoInterés) {
     this.tipoInterés = tipoInterés;
   }
 }
